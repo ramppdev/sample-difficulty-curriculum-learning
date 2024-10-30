@@ -1,0 +1,13 @@
+id: PD-CNN14-T
+type: PredictionDepth
+_target_: aucurriculum.curricula.scoring.PredictionDepth
+run_name: DCASE2020Task1A-32k_Cnn14-32k-T_SAM-SGD-M9_0.01_16_step_43650_None_None_N_N_None_None_1_0_1
+stop: best
+subset: train
+max_embedding_size: 8192
+match_dimensions: true
+probe_placements:
+- transpose_1
+- conv_block\d_bn1
+- conv_block\d_bn2
+- fc1

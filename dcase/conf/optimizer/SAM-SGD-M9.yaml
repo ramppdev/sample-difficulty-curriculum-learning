@@ -1,0 +1,5 @@
+id: SAM-SGD-M9
+_target_: autrainer.optimizers.SAM
+base_optimizer: torch.optim.SGD
+
+momentum: 0.9

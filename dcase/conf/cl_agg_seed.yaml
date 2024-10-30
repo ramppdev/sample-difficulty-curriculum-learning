@@ -1,0 +1,95 @@
+defaults:
+  - _aucurriculum_train_
+  - _self_
+
+results_dir: ../results
+experiment_id: dcase
+training_type: step
+iterations: 43650 # 50 epochs in total
+eval_frequency: 873 # 1 epoch
+save_frequency: 43650
+
+hydra:
+  sweeper:
+    params:
+      +seed: 100, 101, 102
+      +batch_size: 16
+      +learning_rate: 0.01
+      dataset: DCASE2020Task1A-32k
+      model: EfficientNet-B0
+      optimizer: SAM-SGD-M9
+      curriculum: Curriculum
+      curriculum/sampling: Balanced
+      curriculum/scoring:
+        CELoss-S1,
+        CELoss-S2,
+        CELoss-S3,
+        CELoss-S1+2,
+        CELoss-S3+4,
+        CELoss-S5+6,
+        CELoss-S1+2+3,
+        CELoss-S4+5+6,
+        CELoss-S7+8+9,
+        CELoss-S1+2+3+4,
+        CELoss-S5+6+7+8,
+        CELoss-S9+10+11+12,
+        CELoss-S1+2+3+4+5,
+        CELoss-S6+7+8+9+10,
+        CELoss-S11+12+13+14+15,
+        CumAcc-S1,
+        CumAcc-S2,
+        CumAcc-S3,
+        CumAcc-S1+2,
+        CumAcc-S3+4,
+        CumAcc-S5+6,
+        CumAcc-S1+2+3,
+        CumAcc-S4+5+6,
+        CumAcc-S7+8+9,
+        CumAcc-S1+2+3+4,
+        CumAcc-S5+6+7+8,
+        CumAcc-S9+10+11+12,
+        CumAcc-S1+2+3+4+5,
+        CumAcc-S6+7+8+9+10,
+        CumAcc-S11+12+13+14+15,
+        FIT-S1,
+        FIT-S2,
+        FIT-S3,
+        FIT-S1+2,
+        FIT-S3+4,
+        FIT-S5+6,
+        FIT-S1+2+3,
+        FIT-S4+5+6,
+        FIT-S7+8+9,
+        FIT-S1+2+3+4,
+        FIT-S5+6+7+8,
+        FIT-S9+10+11+12,
+        FIT-S1+2+3+4+5,
+        FIT-S6+7+8+9+10,
+        FIT-S11+12+13+14+15,
+        PD-S1,
+        PD-S2,
+        PD-S3,
+        PD-S1+2,
+        PD-S3+4,
+        PD-S5+6,
+        PD-S1+2+3,
+        PD-S4+5+6,
+        PD-S7+8+9,
+        PD-S1+2+3+4,
+        PD-S5+6+7+8,
+        PD-S9+10+11+12,
+        PD-S1+2+3+4+5,
+        PD-S6+7+8+9+10,
+        PD-S11+12+13+14+15
+      curriculum/pacing: Logarithmic
+      curriculum.pacing.initial_size: 0.2
+      curriculum.pacing.final_iteration: 0.8
+    filters:
+      - type: exists
+        path: metrics.csv
+      - type: class
+        target: aucurriculum.core.filters.FilterPartialCurriculum
+        log: false
+      - type: class
+        target: filter_anti_curriculum_runs.FilterAntiCurriculumRuns
+        log: false

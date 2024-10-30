@@ -1,0 +1,10 @@
+id: CELoss-S7+8+9
+type: CELoss
+_target_: aucurriculum.curricula.scoring.CELoss
+run_name:
+- DCASE2020Task1A-32k_EfficientNet-B0_SAM-SGD-M9_0.01_16_step_43650_None_None_N_N_None_None_1_0_7
+- DCASE2020Task1A-32k_EfficientNet-B0_SAM-SGD-M9_0.01_16_step_43650_None_None_N_N_None_None_1_0_8
+- DCASE2020Task1A-32k_EfficientNet-B0_SAM-SGD-M9_0.01_16_step_43650_None_None_N_N_None_None_1_0_9
+criterion: autrainer.criterions.CrossEntropyLoss
+stop: best
+subset: train

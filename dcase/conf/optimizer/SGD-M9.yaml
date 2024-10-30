@@ -1,0 +1,4 @@
+id: SGD-M9
+_target_: torch.optim.SGD
+
+momentum: 0.9

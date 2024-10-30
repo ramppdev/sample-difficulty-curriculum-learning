@@ -1,0 +1,6 @@
+id: TT-CNN14-T
+type: TransferTeacher
+_target_: aucurriculum.curricula.scoring.TransferTeacher
+model: Cnn14-32k-T
+dataset: DCASE2020Task1A-32k
+subset: train

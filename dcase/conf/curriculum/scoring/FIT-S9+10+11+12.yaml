@@ -1,0 +1,10 @@
+id: FIT-S9+10+11+12
+type: FirstIteration
+_target_: aucurriculum.curricula.scoring.FirstIteration
+run_name:
+- DCASE2020Task1A-32k_EfficientNet-B0_SAM-SGD-M9_0.01_16_step_43650_None_None_N_N_None_None_1_0_9
+- DCASE2020Task1A-32k_EfficientNet-B0_SAM-SGD-M9_0.01_16_step_43650_None_None_N_N_None_None_1_0_10
+- DCASE2020Task1A-32k_EfficientNet-B0_SAM-SGD-M9_0.01_16_step_43650_None_None_N_N_None_None_1_0_11
+- DCASE2020Task1A-32k_EfficientNet-B0_SAM-SGD-M9_0.01_16_step_43650_None_None_N_N_None_None_1_0_12
+stop: best
+subset: train

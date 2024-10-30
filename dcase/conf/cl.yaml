@@ -1,0 +1,35 @@
+defaults:
+  - _aucurriculum_train_
+  - _self_
+
+results_dir: ../results
+experiment_id: dcase
+training_type: step
+iterations: 43650 # 50 epochs in total
+eval_frequency: 873 # 1 epoch
+save_frequency: 43650
+
+hydra:
+  sweeper:
+    params:
+      +seed: 100, 101, 102
+      +batch_size: 16
+      +learning_rate: 0.01
+      dataset: DCASE2020Task1A-32k
+      model: EfficientNet-B0
+      optimizer: SAM-SGD-M9
+      curriculum: Curriculum, AntiCurriculum
+      curriculum/sampling: Balanced
+      curriculum/scoring: CELoss-Seed, CumAcc-Seed, PD-Seed, TT-Model, Random
+      curriculum/pacing: Logarithmic, Linear, Exponential, Root
+      curriculum.pacing.initial_size: 0.2
+      curriculum.pacing.final_iteration: 0.5, 0.8
+    filters:
+      - type: exists
+        path: metrics.csv
+      - type: class
+        target: aucurriculum.core.filters.FilterPartialCurriculum
+        log: false
+      - type: class
+        target: filter_anti_curriculum_runs.FilterAntiCurriculumRuns
+        log: false

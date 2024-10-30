@@ -1,0 +1,6 @@
+id: CumAcc-S1
+type: CumulativeAccuracy
+_target_: aucurriculum.curricula.scoring.CumulativeAccuracy
+run_name: DCASE2020Task1A-32k_EfficientNet-B0_SAM-SGD-M9_0.01_16_step_43650_None_None_N_N_None_None_1_0_1
+stop: best
+subset: train

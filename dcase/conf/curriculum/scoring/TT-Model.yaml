@@ -1,0 +1,9 @@
+id: TT-Model
+type: TransferTeacher
+_target_: aucurriculum.curricula.scoring.TransferTeacher
+model:
+- EfficientNet-B0-T
+- Cnn10-32k-T
+- Cnn14-32k-T
+dataset: DCASE2020Task1A-32k
+subset: train
