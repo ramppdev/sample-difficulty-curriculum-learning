@@ -1,0 +1,6 @@
+id: FIT-B0
+type: FirstIteration
+_target_: aucurriculum.curricula.scoring.FirstIteration
+run_name: CIFAR-10_EfficientNet-B0_Adam_0.001_16_step_156250_None_None_N_N_None_None_1_0_1
+stop: best
+subset: train

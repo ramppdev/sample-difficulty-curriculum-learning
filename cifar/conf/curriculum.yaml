@@ -1,0 +1,255 @@
+defaults:
+  - _aucurriculum_score_
+  - _self_
+
+results_dir: ../results
+experiment_id: cifar
+
+hydra:
+  sweeper:
+    params:
+      curriculum/scoring:
+        CELoss-Seed,
+        CELoss-S1,
+        CELoss-S2,
+        CELoss-S3,
+        CELoss-S4,
+        CELoss-S5,
+        CELoss-S6,
+        CELoss-Model,
+        CELoss-B0,
+        CELoss-B0-T,
+        CELoss-B4,
+        CELoss-B4-T,
+        CELoss-R50,
+        CELoss-R50-T,
+        CELoss-Optim,
+        CELoss-Adam-0.01,
+        CELoss-Adam-0.001,
+        CELoss-SAM-0.01,
+        CELoss-SAM-0.001,
+        CELoss-SGD-0.01,
+        CELoss-SGD-0.001,
+        CVLoss-Seed,
+        CVLoss-S1,
+        CVLoss-S2,
+        CVLoss-S3,
+        CVLoss-S4,
+        CVLoss-S5,
+        CVLoss-S6,
+        CVLoss-Model,
+        CVLoss-B0,
+        CVLoss-B0-T,
+        CVLoss-B4,
+        CVLoss-B4-T,
+        CVLoss-R50,
+        CVLoss-R50-T,
+        CVLoss-Optim,
+        CVLoss-Adam-0.01,
+        CVLoss-Adam-0.001,
+        CVLoss-SAM-0.01,
+        CVLoss-SAM-0.001,
+        CVLoss-SGD-0.01,
+        CVLoss-SGD-0.001,
+        CumAcc-Seed,
+        CumAcc-S1,
+        CumAcc-S2,
+        CumAcc-S3,
+        CumAcc-S4,
+        CumAcc-S5,
+        CumAcc-S6,
+        CumAcc-Model,
+        CumAcc-B0,
+        CumAcc-B0-T,
+        CumAcc-B4,
+        CumAcc-B4-T,
+        CumAcc-R50,
+        CumAcc-R50-T,
+        CumAcc-Optim,
+        CumAcc-Adam-0.01,
+        CumAcc-Adam-0.001,
+        CumAcc-SAM-0.01,
+        CumAcc-SAM-0.001,
+        CumAcc-SGD-0.01,
+        CumAcc-SGD-0.001,
+        FIT-Seed,
+        FIT-S1,
+        FIT-S2,
+        FIT-S3,
+        FIT-S4,
+        FIT-S5,
+        FIT-S6,
+        FIT-Model,
+        FIT-B0,
+        FIT-B0-T,
+        FIT-B4,
+        FIT-B4-T,
+        FIT-R50,
+        FIT-R50-T,
+        FIT-Optim,
+        FIT-Adam-0.01,
+        FIT-Adam-0.001,
+        FIT-SAM-0.01,
+        FIT-SAM-0.001,
+        FIT-SGD-0.01,
+        FIT-SGD-0.001,
+        PD-Seed,
+        PD-S1,
+        PD-S2,
+        PD-S3,
+        PD-S4,
+        PD-S5,
+        PD-S6,
+        PD-Model,
+        PD-B0,
+        PD-B0-T,
+        PD-B4,
+        PD-B4-T,
+        PD-R50,
+        PD-R50-T,
+        PD-Optim,
+        PD-Adam-0.01,
+        PD-Adam-0.001,
+        PD-SAM-0.01,
+        PD-SAM-0.001,
+        PD-SGD-0.01,
+        PD-SGD-0.001,
+        TT-B0-T,
+        TT-B4-T,
+        TT-R50-T,
+        TT-Model,
+        Random,
+        C-Score
+
+correlation:
+  seed_macro:
+    - C-Score
+    - CELoss-Seed
+    - CVLoss-Seed
+    - CumAcc-Seed
+    - FIT-Seed
+    - PD-Seed
+  model_macro:
+    - C-Score
+    - CELoss-Model
+    - CVLoss-Model
+    - CumAcc-Model
+    - FIT-Model
+    - PD-Model
+    - TT-Model
+  optim_macro:
+    - C-Score
+    - CELoss-Optim
+    - CVLoss-Optim
+    - CumAcc-Optim
+    - FIT-Optim
+    - PD-Optim
+  seed_ce_loss:
+    - CELoss-S1
+    - CELoss-S2
+    - CELoss-S3
+    - CELoss-S4
+    - CELoss-S5
+    - CELoss-S6
+  model_ce_loss:
+    - CELoss-B0
+    - CELoss-B0-T
+    - CELoss-B4
+    - CELoss-B4-T
+    - CELoss-R50
+    - CELoss-R50-T
+  optim_ce_loss:
+    - CELoss-Adam-0.01
+    - CELoss-Adam-0.001
+    - CELoss-SAM-0.01
+    - CELoss-SAM-0.001
+    - CELoss-SGD-0.01
+    - CELoss-SGD-0.001
+  seed_cv_loss:
+    - CVLoss-S1
+    - CVLoss-S2
+    - CVLoss-S3
+    - CVLoss-S4
+    - CVLoss-S5
+    - CVLoss-S6
+  model_cv_loss:
+    - CVLoss-B0
+    - CVLoss-B0-T
+    - CVLoss-B4
+    - CVLoss-B4-T
+    - CVLoss-R50
+    - CVLoss-R50-T
+  optim_cv_loss:
+    - CVLoss-Adam-0.01
+    - CVLoss-Adam-0.001
+    - CVLoss-SAM-0.01
+    - CVLoss-SAM-0.001
+    - CVLoss-SGD-0.01
+    - CVLoss-SGD-0.001
+  seed_cum_acc:
+    - CumAcc-S1
+    - CumAcc-S2
+    - CumAcc-S3
+    - CumAcc-S4
+    - CumAcc-S5
+    - CumAcc-S6
+  model_cum_acc:
+    - CumAcc-B0
+    - CumAcc-B0-T
+    - CumAcc-B4
+    - CumAcc-B4-T
+    - CumAcc-R50
+    - CumAcc-R50-T
+  optim_cum_acc:
+    - CumAcc-Adam-0.01
+    - CumAcc-Adam-0.001
+    - CumAcc-SAM-0.01
+    - CumAcc-SAM-0.001
+    - CumAcc-SGD-0.01
+    - CumAcc-SGD-0.001
+  seed_fit:
+    - FIT-S1
+    - FIT-S2
+    - FIT-S3
+    - FIT-S4
+    - FIT-S5
+    - FIT-S6
+  model_fit:
+    - FIT-B0
+    - FIT-B0-T
+    - FIT-B4
+    - FIT-B4-T
+    - FIT-R50
+    - FIT-R50-T
+  optim_fit:
+    - FIT-Adam-0.01
+    - FIT-Adam-0.001
+    - FIT-SAM-0.01
+    - FIT-SAM-0.001
+    - FIT-SGD-0.01
+    - FIT-SGD-0.001
+  seed_pd:
+    - PD-S1
+    - PD-S2
+    - PD-S3
+    - PD-S4
+    - PD-S5
+    - PD-S6
+  model_pd:
+    - PD-B0
+    - PD-B0-T
+    - PD-B4
+    - PD-B4-T
+    - PD-R50
+    - PD-R50-T
+  optim_pd:
+    - PD-Adam-0.01
+    - PD-Adam-0.001
+    - PD-SAM-0.01
+    - PD-SAM-0.001
+    - PD-SGD-0.01
+    - PD-SGD-0.001
+  model_tt:
+    - TT-B0-T
+    - TT-B4-T
+    - TT-R50-T

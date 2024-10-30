@@ -1,0 +1,8 @@
+id: C-Score
+type: Predefined
+_target_: aucurriculum.curricula.scoring.Predefined
+file: c_scores.csv
+scores_column: c_scores_raw
+reverse: true
+dataset: CIFAR-10
+subset: train

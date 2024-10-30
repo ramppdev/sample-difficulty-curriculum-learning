@@ -1,0 +1,26 @@
+id: CVLoss-S4
+type: CVLoss
+_target_: aucurriculum.curricula.scoring.CVLoss
+splits: 3
+setup:
+  filters: null
+  dataset: CIFAR-10
+  model: EfficientNet-B0
+  optimizer: Adam
+  learning_rate: 0.001
+  scheduler: None
+  augmentation: None
+  seed: 4
+  batch_size: 16
+  inference_batch_size: 16
+  plotting: Default
+  training_type: step
+  iterations: 78125
+  eval_frequency: 3125
+  save_frequency: 78125
+  save_train_outputs: true
+  save_dev_outputs: true
+  save_test_outputs: true
+criterion: autrainer.criterions.CrossEntropyLoss
+stop: best
+subset: train

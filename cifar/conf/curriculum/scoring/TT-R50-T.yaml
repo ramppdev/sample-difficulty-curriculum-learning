@@ -1,0 +1,6 @@
+id: TT-R50-T
+type: TransferTeacher
+_target_: aucurriculum.curricula.scoring.TransferTeacher
+model: ResNet-50-T
+dataset: CIFAR-10
+subset: train

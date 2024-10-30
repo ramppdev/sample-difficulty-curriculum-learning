@@ -1,0 +1,14 @@
+id: PD-B4-T
+type: PredictionDepth
+_target_: aucurriculum.curricula.scoring.PredictionDepth
+run_name: CIFAR-10_EfficientNet-B4-T_Adam_0.001_16_step_156250_None_None_N_N_None_None_1_0_1
+stop: best
+subset: train
+max_embedding_size: 8192
+match_dimensions: true
+probe_placements:
+- model_features_0_1
+- model_features_1_0_block_2_1
+- model_features_\d_0_block_3_1
+- add(_\d+)?
+- model_features_8_1

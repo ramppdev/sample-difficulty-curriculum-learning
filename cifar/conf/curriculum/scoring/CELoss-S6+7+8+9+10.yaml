@@ -1,0 +1,12 @@
+id: CELoss-S6+7+8+9+10
+type: CELoss
+_target_: aucurriculum.curricula.scoring.CELoss
+run_name:
+- CIFAR-10_EfficientNet-B0_Adam_0.001_16_step_156250_None_None_N_N_None_None_1_0_6
+- CIFAR-10_EfficientNet-B0_Adam_0.001_16_step_156250_None_None_N_N_None_None_1_0_7
+- CIFAR-10_EfficientNet-B0_Adam_0.001_16_step_156250_None_None_N_N_None_None_1_0_8
+- CIFAR-10_EfficientNet-B0_Adam_0.001_16_step_156250_None_None_N_N_None_None_1_0_9
+- CIFAR-10_EfficientNet-B0_Adam_0.001_16_step_156250_None_None_N_N_None_None_1_0_10
+criterion: autrainer.criterions.CrossEntropyLoss
+stop: best
+subset: train

@@ -1,0 +1,26 @@
+defaults:
+  - _aucurriculum_train_
+  - _self_
+
+results_dir: ../results
+experiment_id: cifar
+training_type: step
+iterations: 156250 # 50 epochs in total
+eval_frequency: 3125 # 1 epoch
+save_frequency: 3125
+
+hydra:
+  sweeper:
+    params:
+      +seed: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+      +batch_size: 16
+      +learning_rate: 0.001
+      dataset: CIFAR-10
+      model: EfficientNet-B0
+      optimizer: Adam
+      curriculum: None
+      curriculum/sampling: None
+      curriculum/scoring: None
+      curriculum/pacing: None
+      curriculum.pacing.initial_size: 1
+      curriculum.pacing.final_iteration: 0

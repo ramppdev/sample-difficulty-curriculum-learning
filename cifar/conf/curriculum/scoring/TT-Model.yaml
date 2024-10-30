@@ -1,0 +1,9 @@
+id: TT-Model
+type: TransferTeacher
+_target_: aucurriculum.curricula.scoring.TransferTeacher
+model:
+- EfficientNet-B0-T
+- EfficientNet-B4-T
+- ResNet-50-T
+dataset: CIFAR-10
+subset: train

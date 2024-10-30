@@ -1,0 +1,11 @@
+id: PD-R50-T
+type: PredictionDepth
+_target_: aucurriculum.curricula.scoring.PredictionDepth
+run_name: CIFAR-10_ResNet-50-T_Adam_0.001_16_step_156250_None_None_N_N_None_None_1_0_1
+stop: best
+subset: train
+max_embedding_size: 8192
+match_dimensions: true
+probe_placements:
+- model_bn1
+- add(_\d+)?
