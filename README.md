@@ -1,7 +1,7 @@
 # Does the Definition of Difficulty Matter? Scoring Functions and their Role for Curriculum Learning
 
 This repository contains the configurations and code to reproduce the experiments and analyses of the paper
-"Does the Definition of Difficulty Matter? Scoring Functions and their Role for Curriculum Learning".
+["Does the Definition of Difficulty Matter? Scoring Functions and their Role for Curriculum Learning"](https://doi.org/10.48550/arXiv.2411.00973).
 The implementation is based on [aucurriculum `v0.1.0`](https://github.com/autrainer/aucurriculum) and [autrainer `v0.4.0`](https://github.com/autrainer/autrainer).
 
 Implemented by [Simon David Noel Rampp](https://github.com/ramppdev) with contributions by [Manuel Milling](https://github.com/millinma) and [Andreas Triantafyllopoulos](https://github.com/ATriantafyllopoulos).
@@ -62,4 +62,15 @@ To reproduce the analyses, tables, and figures, execute the respective notebooks
 
 If you use this code or _aucurriculum_ in your research, please cite the following paper:
 
-(Soon to be updated).
+```bibtex
+@misc{rampp2024sampledifficulty,
+  doi = {10.48550/ARXIV.2411.00973},
+  url = {https://arxiv.org/abs/2411.00973},
+  author = {Rampp,  Simon and Milling,  Manuel and Triantafyllopoulos,  Andreas and Schuller,  Bj\"{o}rn W.},
+  keywords = {Machine Learning (cs.LG),  FOS: Computer and information sciences,  FOS: Computer and information sciences},
+  title = {Does the Definition of Difficulty Matter? Scoring Functions and their Role for Curriculum Learning},
+  publisher = {arXiv},
+  year = {2024},
+  copyright = {Creative Commons Attribution Non Commercial Share Alike 4.0 International}
+}
+```
