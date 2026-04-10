@@ -1,5 +1,8 @@
 # Does the Definition of Difficulty Matter? Scoring Functions and their Role for Curriculum Learning
 
+> [!NOTE]
+> Accepted at IJCNN 2026.
+
 This repository contains the configurations and code to reproduce the experiments and analyses of the paper
 ["Does the Definition of Difficulty Matter? Scoring Functions and their Role for Curriculum Learning"](https://doi.org/10.48550/arXiv.2411.00973).
 The implementation is based on [aucurriculum `v0.1.0`](https://github.com/autrainer/aucurriculum) and [autrainer `v0.4.0`](https://github.com/autrainer/autrainer).
