@@ -15,6 +15,7 @@ After cloning the repository and navigating to the root directory, create a virt
 
 ```bash
 pip install aucurriculum==0.1.0
+pip install efficientnet-pytorch==0.7.1
 ```
 
 The experiments are organized in the `cifar` and `dcase` directories (the following steps should be executed for each dataset separately).

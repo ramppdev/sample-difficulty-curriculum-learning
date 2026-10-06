@@ -1,0 +1,8 @@
+id: EfficientNet-B0-T
+_target_: efficientnet.EfficientNet
+
+scaling_type: efficientnet-b0
+transfer: true
+
+transform:
+  type: image
